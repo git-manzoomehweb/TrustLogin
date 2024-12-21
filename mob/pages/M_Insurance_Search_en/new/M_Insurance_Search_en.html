@@ -1,7 +1,7 @@
 <basis core="tracking" name="tracking" source="Monitoring" collectionname="activity" dbname="tracking"
 addcookie="true" />
 <basis core="cookie" name="trackingid" value="[##tracking.inserted.id|(0)##]" />
-<basis core="call" file="Client_CheckRkey.inc"></basis> <!-- updated login -->
+<basis core="call" lid="2" file="Client_CheckRkey.inc"></basis> <!-- updated login -->
 <basis core="group" name="search">
 <basis core="external.fly.ws" source="cmsDbService2" procedurename="dbsource" name="db">
     <member name="get_price" method="insurance" query='{
@@ -232,7 +232,7 @@ addcookie="true" />
             </div>
             <div id="Container-resize">
                 <div class="loginRegister"></div>
-                <basis core="call" file="M_Header_en.inc" />
+                <basis core="call" lid="2" file="M_Header_en.inc" />
                 <div class="clr"></div>
                 <div id="content">
                     <div class="section-research background-color_1 font_13">
@@ -558,7 +558,7 @@ addcookie="true" />
                     </div>
 
                 </div>
-                <basis core="call" file="M_Footer_en.inc" />
+                <basis core="call" lid="2" file="M_Footer_en.inc" />
             </div>
         </div>
 
