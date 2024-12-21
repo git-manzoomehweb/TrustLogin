@@ -1,6 +1,6 @@
 <basis core="api" name="api.schema" run="AtClient" url="https://api.trust-login.com/schema/[##cms.cookie.rkey##]/ar"
     method="get" onprocessed="onProcessedUserinformation"></basis>
-<basis core="call" if="{##db.runLogout.value|(false)##}" run="AtClient" file="/authentication/dmntoken"
+<basis core="call" lid="3" if="{##db.runLogout.value|(false)##}" run="AtClient" file="/authentication/dmntoken"
     triggers="db.runLogout" onrendered="setDmnTokenForLogout"></basis>
 <basis core="api" name="api.logout" if="{##db.logout.run|(false)##}" run="AtClient"
     url='https://api.trust-login.com/logout/{##db.logout.value##}' method="post"

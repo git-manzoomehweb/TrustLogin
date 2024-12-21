@@ -9,7 +9,7 @@
         <span>تسجيل الدخول والتسجيل</span>
     </span>
     <basis core="call" if="{##db.runLogin.value|(false)##}" run="AtClient" file="/authentication/dmntoken"
-        triggers="db.runLogin" onrendered="setDmnToken"></basis>
+        triggers="db.runLogin" onrendered="setDmnToken" lid="3"></basis>
     <basis core="api" name="api.selectuser" if="{##authentication.hashid##} && {##form.selectuser##}" run="AtClient"
         url="https://api.trust-login.com/selectuser" method="post"
         body='{"hashid": "{##authentication.hashid.value##}", "userid": {##form.selectuser.userid|(null)##}}'
@@ -121,7 +121,7 @@
 
 </basis>
 <basis core="group" name="has-rkey" if="'[##cms.cookie.rkey##]' <> ''">
-    <basis core="call" file="Client_CheckRkey.inc"></basis>
+    <basis core="call" file="Client_CheckRkey.inc" lid="3" ></basis>
     <basis core="group" name="inValid-rkey" if="'[##db.checkrkey.checked##]'='false'">
         <span class="btnstyle" onclick="showLoginContainer(this)">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -132,7 +132,7 @@
             </svg>
             <span>تسجيل الدخول والتسجيل</span>
         </span>
-        <basis core="call" if="{##db.runLogin.value|(false)##}" run="AtClient" file="/authentication/dmntoken"
+        <basis core="call" lid="3" if="{##db.runLogin.value|(false)##}" run="AtClient" file="/authentication/dmntoken"
             triggers="db.runLogin" onrendered="setDmnToken"></basis>
         <basis core="api" name="api.selectuser" if="{##authentication.hashid##} && {##form.selectuser##}" run="AtClient"
             url="https://api.trust-login.com/selectuser" method="post"
